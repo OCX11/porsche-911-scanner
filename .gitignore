@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+venv/
+.env
+*.log
+seen_porsche_list.json
+.idea/
+.vscode/
