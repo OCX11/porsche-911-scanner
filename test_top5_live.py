@@ -22,7 +22,7 @@ async def test_top5():
         print("ERROR: TELEGRAM_BOT_TOKEN not set")
         return
     
-    from scrapers.pca_mart_playwright import scrape_pca_mart
+    from scrapers.pca_mart_final import scrape_pca_mart
     
     listings = await scrape_pca_mart()
     

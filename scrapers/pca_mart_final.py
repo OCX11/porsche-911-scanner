@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PCA Mart Scraper - Playwright (JS rendering)
-Real HTML parsing after page loads
+PCA Mart Scraper - Real HTML parsing, all Porsche models
+Filters: 1986-2024, <100K miles, $15K+
 """
 
 import re
@@ -20,7 +20,7 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 
-class PCAMartScraperPlaywright:
+class PCAMartScraper:
     """PCA Mart scraper using Playwright for JS rendering."""
 
     BASE_URL = "https://mart.pca.org"
@@ -123,8 +123,9 @@ class PCAMartScraperPlaywright:
         return self.BASE_URL + '/' + img_src.lstrip('/')
 
     async def scrape(self) -> List[Dict]:
-        """Scrape PCA Mart listings."""
+        """Scrape PCA Mart listings - ALL Porsche models."""
         listings = []
+        seen_hashes = set()
 
         try:
             logger.info(f"PCA Mart: Loading {self.BASE_URL}...")
@@ -161,12 +162,15 @@ class PCAMartScraperPlaywright:
                     title_tag = right_col.find('a', {'class': 'martListingTitle'})
                     title = title_tag.get_text(strip=True) if title_tag else 'Unknown'
 
-                    # Accept all Porsche models (911, 718, Taycan, 914, Cayman, Boxster, etc.)
-                    # No model filter — just check it has Porsche in title (implicit from listing)
-
                     # Extract ad number
                     ad_h6 = right_col.find('h6')
                     ad_number = self._extract_ad_number(ad_h6.get_text(strip=True)) if ad_h6 else ''
+
+                    # Skip if duplicate
+                    h = self._hash_listing(ad_number)
+                    if h in seen_hashes:
+                        continue
+                    seen_hashes.add(h)
 
                     # Extract price
                     price_tag = right_col.find('span', {'class': 'martListingPrice'})
@@ -187,12 +191,29 @@ class PCAMartScraperPlaywright:
                     listing_link = title_tag.get('href') if title_tag else ''
                     url = f"{self.BASE_URL}/{listing_link}" if listing_link else ''
 
-                    # Filter: 1986-2024, <100K miles, $15K+
+                    # FILTERS: Accept Porsche vehicles (exclude Taycan, 914, parts)
+                    # - Must have a year (vehicle, not parts)
+                    # - Year: 1986-2024
+                    # - Mileage: <100K (if it's a vehicle)
+                    # - Price: $15K+ (or skip cheap parts)
+                    # - Exclude: Taycan, 914 models
+                    
+                    if year == 0:  # Not a vehicle listing
+                        continue
                     if year < 1986 or year > 2024:
                         continue
-                    if mileage > 100000:
+                    
+                    # Exclude specific models
+                    if '914' in title.upper() or 'taycan' in title.lower():
                         continue
-                    if price < 15000:
+                    
+                    # If mileage detected, check it
+                    if mileage > 0 and mileage > 100000:
+                        continue
+                    
+                    # Price check: skip if too cheap (likely parts not vehicles)
+                    # Lowered to $10K to include more vintage cars
+                    if price > 0 and price < 10000:
                         continue
 
                     listing = {
@@ -210,7 +231,7 @@ class PCAMartScraperPlaywright:
                     }
 
                     listings.append(listing)
-                    logger.info(f"PCA: {year} {model} - ${price:,} - {mileage:,}mi")
+                    logger.info(f"PCA: {year} {model} - ${price:,} - {mileage:,}mi - Ad #{ad_number}")
 
                 except Exception as e:
                     logger.warning(f"PCA: Parse error: {e}")
@@ -219,13 +240,13 @@ class PCAMartScraperPlaywright:
         except Exception as e:
             logger.error(f"PCA scrape failed: {e}")
 
-        logger.info(f"PCA: Scraped {len(listings)} valid 911s")
+        logger.info(f"PCA: Scraped {len(listings)} valid listings")
         return listings
 
 
 async def scrape_pca_mart() -> List[Dict]:
     """Main entry point."""
-    scraper = PCAMartScraperPlaywright()
+    scraper = PCAMartScraper()
     await scraper.init()
     try:
         listings = await scraper.scrape()
