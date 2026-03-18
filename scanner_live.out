@@ -11,3 +11,22 @@
 2026-03-18 10:37:10,688 [INFO] PCA: 2018 718 Boxster - $51,000 - 21,000mi - Ad #81079
 2026-03-18 10:37:10,688 [INFO] PCA: Scraped 3 valid listings
 2026-03-18 10:37:11,312 [INFO] ✓ Telegram: 2024 911 GT3 - $285,000 from mart.pca.org
+2026-03-18 10:37:12,973 [INFO] ✓ Telegram: 2020 718 Boxster - $65,000 from mart.pca.org
+2026-03-18 10:37:14,605 [INFO] ✓ Telegram: 2018 718 Boxster - $51,000 from mart.pca.org
+2026-03-18 10:37:15,656 [INFO] Saved 3 cars to dedup list
+2026-03-18 10:37:15,657 [INFO] ✓ Found 3 new listings this cycle
+2026-03-18 10:37:15,657 [INFO] ✓ Rolling list total: 3 cars
+2026-03-18 10:37:15,657 [INFO] ============================================================
+2026-03-18 10:37:15,657 [INFO] Next scan in 600s...
+2026-03-18 10:47:15,663 [INFO] ============================================================
+2026-03-18 10:47:15,665 [INFO] Starting scan at 2026-03-18T10:47:15.665486
+2026-03-18 10:47:16,308 [INFO] PCA Mart: Loading https://mart.pca.org...
+2026-03-18 10:47:17,925 [INFO] PCA Mart: Found 14 total rows
+2026-03-18 10:47:17,926 [INFO] PCA: 2024 911 GT3 - $285,000 - 5,503mi - Ad #80713
+2026-03-18 10:47:17,926 [INFO] PCA: 2020 718 Boxster - $65,000 - 0mi - Ad #81082
+2026-03-18 10:47:17,927 [INFO] PCA: Scraped 2 valid listings
+2026-03-18 10:47:17,948 [INFO] Saved 3 cars to dedup list
+2026-03-18 10:47:17,948 [INFO] ✓ Found 0 new listings this cycle
+2026-03-18 10:47:17,948 [INFO] ✓ Rolling list total: 3 cars
+2026-03-18 10:47:17,948 [INFO] ============================================================
+2026-03-18 10:47:17,948 [INFO] Next scan in 600s...
