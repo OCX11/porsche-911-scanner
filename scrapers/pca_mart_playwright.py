@@ -86,11 +86,33 @@ class PCAMartScraperPlaywright:
         return match.group(1) if match else ''
 
     def _extract_published_date(self, description: str) -> str:
-        """Extract published date."""
+        """Extract and format published date to MM.DD.YY - HH:MMAM/PM."""
         if not description:
             return 'N/A'
-        match = re.search(r'Published:\s*([^<\n]+)', description)
-        return match.group(1).strip() if match else 'N/A'
+        
+        # Try both "Published:" and "Updated:" labels
+        # Match up to first newline or <
+        match = re.search(r'(?:Published|Updated):\s*([A-Za-z]+ \d+, \d{4})', description)
+        if not match:
+            return 'N/A'
+        
+        date_str = match.group(1).strip()
+        # Expected format: "March 18, 2026" or similar
+        # Convert to MM.DD.YY - HH:MMAM/PM
+        try:
+            from datetime import datetime
+            # Try parsing common formats
+            for fmt in ['%B %d, %Y', '%b %d, %Y', '%m/%d/%Y']:
+                try:
+                    dt = datetime.strptime(date_str, fmt)
+                    # Format as MM.DD.YY - time unknown, use 12:00AM placeholder
+                    return dt.strftime('%m.%d.%y - 12:00AM')
+                except:
+                    continue
+            # If no format matches, return as-is with note
+            return date_str
+        except:
+            return date_str
 
     def _build_thumbnail_url(self, img_src: str) -> str:
         """Convert relative path to full URL."""
