@@ -1,0 +1,13 @@
+2026-03-18 10:37:08,227 [INFO] 🦞 Starting Porsche Scanner LIVE
+2026-03-18 10:37:08,227 [INFO] PCA Mart every 600s (10min)
+2026-03-18 10:37:08,227 [INFO] Telegram bot configured
+2026-03-18 10:37:08,227 [INFO] Rennlist: coming next
+2026-03-18 10:37:08,227 [INFO] ============================================================
+2026-03-18 10:37:08,227 [INFO] Starting scan at 2026-03-18T10:37:08.227562
+2026-03-18 10:37:08,592 [INFO] PCA Mart: Loading https://mart.pca.org...
+2026-03-18 10:37:10,685 [INFO] PCA Mart: Found 14 total rows
+2026-03-18 10:37:10,688 [INFO] PCA: 2024 911 GT3 - $285,000 - 5,503mi - Ad #80713
+2026-03-18 10:37:10,688 [INFO] PCA: 2020 718 Boxster - $65,000 - 0mi - Ad #81082
+2026-03-18 10:37:10,688 [INFO] PCA: 2018 718 Boxster - $51,000 - 21,000mi - Ad #81079
+2026-03-18 10:37:10,688 [INFO] PCA: Scraped 3 valid listings
+2026-03-18 10:37:11,312 [INFO] ✓ Telegram: 2024 911 GT3 - $285,000 from mart.pca.org
