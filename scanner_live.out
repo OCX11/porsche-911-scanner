@@ -1,32 +1,39 @@
-2026-03-18 10:37:08,227 [INFO] 🦞 Starting Porsche Scanner LIVE
-2026-03-18 10:37:08,227 [INFO] PCA Mart every 600s (10min)
-2026-03-18 10:37:08,227 [INFO] Telegram bot configured
-2026-03-18 10:37:08,227 [INFO] Rennlist: coming next
-2026-03-18 10:37:08,227 [INFO] ============================================================
-2026-03-18 10:37:08,227 [INFO] Starting scan at 2026-03-18T10:37:08.227562
-2026-03-18 10:37:08,592 [INFO] PCA Mart: Loading https://mart.pca.org...
-2026-03-18 10:37:10,685 [INFO] PCA Mart: Found 14 total rows
-2026-03-18 10:37:10,688 [INFO] PCA: 2024 911 GT3 - $285,000 - 5,503mi - Ad #80713
-2026-03-18 10:37:10,688 [INFO] PCA: 2020 718 Boxster - $65,000 - 0mi - Ad #81082
-2026-03-18 10:37:10,688 [INFO] PCA: 2018 718 Boxster - $51,000 - 21,000mi - Ad #81079
-2026-03-18 10:37:10,688 [INFO] PCA: Scraped 3 valid listings
-2026-03-18 10:37:11,312 [INFO] ✓ Telegram: 2024 911 GT3 - $285,000 from mart.pca.org
-2026-03-18 10:37:12,973 [INFO] ✓ Telegram: 2020 718 Boxster - $65,000 from mart.pca.org
-2026-03-18 10:37:14,605 [INFO] ✓ Telegram: 2018 718 Boxster - $51,000 from mart.pca.org
-2026-03-18 10:37:15,656 [INFO] Saved 3 cars to dedup list
-2026-03-18 10:37:15,657 [INFO] ✓ Found 3 new listings this cycle
-2026-03-18 10:37:15,657 [INFO] ✓ Rolling list total: 3 cars
-2026-03-18 10:37:15,657 [INFO] ============================================================
-2026-03-18 10:37:15,657 [INFO] Next scan in 600s...
-2026-03-18 10:47:15,663 [INFO] ============================================================
-2026-03-18 10:47:15,665 [INFO] Starting scan at 2026-03-18T10:47:15.665486
-2026-03-18 10:47:16,308 [INFO] PCA Mart: Loading https://mart.pca.org...
-2026-03-18 10:47:17,925 [INFO] PCA Mart: Found 14 total rows
-2026-03-18 10:47:17,926 [INFO] PCA: 2024 911 GT3 - $285,000 - 5,503mi - Ad #80713
-2026-03-18 10:47:17,926 [INFO] PCA: 2020 718 Boxster - $65,000 - 0mi - Ad #81082
-2026-03-18 10:47:17,927 [INFO] PCA: Scraped 2 valid listings
-2026-03-18 10:47:17,948 [INFO] Saved 3 cars to dedup list
-2026-03-18 10:47:17,948 [INFO] ✓ Found 0 new listings this cycle
-2026-03-18 10:47:17,948 [INFO] ✓ Rolling list total: 3 cars
-2026-03-18 10:47:17,948 [INFO] ============================================================
-2026-03-18 10:47:17,948 [INFO] Next scan in 600s...
+2026-03-18 10:48:26,596 [INFO] Loaded 3 seen cars from dedup list
+2026-03-18 10:48:26,596 [INFO] 🦞 Starting Porsche Scanner LIVE
+2026-03-18 10:48:26,596 [INFO] PCA Mart every 600s (10min)
+2026-03-18 10:48:26,596 [INFO] Telegram bot configured
+2026-03-18 10:48:26,596 [INFO] Rennlist: coming next
+2026-03-18 10:48:26,596 [INFO] ============================================================
+2026-03-18 10:48:26,596 [INFO] Starting scan at 2026-03-18T10:48:26.596418
+2026-03-18 10:48:27,374 [INFO] PCA Mart: Loading https://mart.pca.org...
+2026-03-18 10:48:28,971 [INFO] PCA Mart: Found 14 total rows
+2026-03-18 10:48:28,973 [INFO] PCA: 2024 911 GT3 - $285,000 - 5,503mi - Ad #80713
+2026-03-18 10:48:28,973 [INFO] PCA: 2020 718 Boxster - $65,000 - 0mi - Ad #81082
+2026-03-18 10:48:28,973 [INFO] PCA: Scraped 2 valid listings
+2026-03-18 10:48:29,002 [INFO] Rennlist: Fetching page 1...
+2026-03-18 10:48:29,696 [INFO] Rennlist: Found 23 raw items
+2026-03-18 10:48:29,697 [INFO] Rennlist: 2005 911 - $63,000 - 0mi
+2026-03-18 10:48:29,697 [INFO] Rennlist: 2013 911 - $86,000 - 41,754mi
+2026-03-18 10:48:29,698 [INFO] Rennlist: 2013 Boxster - $46,000 - 0mi
+2026-03-18 10:48:29,698 [INFO] Rennlist: 2022 718 - $149,000 - 0mi
+2026-03-18 10:48:29,698 [INFO] Rennlist: 2000 GT3 - $160,000 - 0mi
+2026-03-18 10:48:29,699 [INFO] Rennlist: 2018 911 - $146,800 - 0mi
+2026-03-18 10:48:29,699 [INFO] Rennlist: 2022 911 - $250,000 - 0mi
+2026-03-18 10:48:29,699 [INFO] Rennlist: 2010 GT3 - $140,000 - 0mi
+2026-03-18 10:48:29,699 [INFO] Rennlist: 2021 718 Cayman - $129,900 - 0mi
+2026-03-18 10:48:29,700 [INFO] Rennlist: 1999 GT3 - $189,000 - 0mi
+2026-03-18 10:48:29,700 [INFO] Rennlist: 2023 718 - $146,000 - 0mi
+2026-03-18 10:48:29,700 [INFO] Rennlist: 2006 911 - $47,499 - 0mi
+2026-03-18 10:48:29,700 [INFO] Rennlist: 2022 911 - $285,000 - 0mi
+2026-03-18 10:48:29,701 [INFO] Rennlist: 2018 Macan - $34,500 - 54,000mi
+2026-03-18 10:48:29,701 [INFO] Rennlist: 2018 718 Cayman - $44,900 - 78,000mi
+2026-03-18 10:48:29,701 [INFO] Rennlist: 2006 911 - $54,997 - 0mi
+2026-03-18 10:48:29,701 [INFO] Rennlist: 1999 911 - $17,000 - 0mi
+2026-03-18 10:48:29,702 [INFO] Rennlist: 2020 Macan - $41,999 - 0mi
+2026-03-18 10:48:29,702 [INFO] Rennlist: Scraped 18 valid listings from page 1
+2026-03-18 10:48:31,095 [INFO] ✓ Telegram: 2005 911 - $63,000 from rennlist.com
+2026-03-18 10:48:32,122 [INFO] Saved 4 cars to dedup list
+2026-03-18 10:48:32,122 [INFO] ✓ Found 1 new listings this cycle
+2026-03-18 10:48:32,122 [INFO] ✓ Rolling list total: 4 cars
+2026-03-18 10:48:32,122 [INFO] ============================================================
+2026-03-18 10:48:32,122 [INFO] Next scan in 600s...
