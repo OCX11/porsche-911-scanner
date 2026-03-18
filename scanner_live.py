@@ -174,12 +174,14 @@ class PorscheScanner:
         try:
             from scrapers.pca_mart_final import scrape_pca_mart
             from scrapers.rennlist import scrape_rennlist
+            from scrapers.cars_com import scrape_cars_com
             
             pca_listings = await scrape_pca_mart()
             rennlist_listings = scrape_rennlist(page=1)
+            cars_com_listings = await scrape_cars_com()
             
-            # Combine both sources
-            listings = pca_listings + rennlist_listings
+            # Combine all sources
+            listings = pca_listings + rennlist_listings + cars_com_listings
 
             for listing in listings:
                 ad_number = listing.get('ad_number', '')
